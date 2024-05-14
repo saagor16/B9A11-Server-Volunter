@@ -113,7 +113,27 @@ async function run() {
 
 
 
-    
+      app.get('/updateVolunteer/:id', async(req, res) =>{
+        const result = await volunteerCollection.findOne({_id: new ObjectId(req.params.id)})
+        res.send(result)
+      })
+      app.put('/updateVolunteer/:id', async(req, res) =>{
+        const query = {_id: new ObjectId(req.params.id)}
+        const volunteer = {
+          $set:{
+      
+            title: req.body.title,
+            description: req.body.description,
+            date: req.body.date,
+            thumbnail: req.body.thumbnail,
+            category: req.body.category,
+            volunteersNeeded: req.body.volunteersNeeded,
+            
+          }
+        }
+        const result = await volunteerCollection.updateOne(query, volunteer);
+        res.send(result)
+      } )
 
  
     
