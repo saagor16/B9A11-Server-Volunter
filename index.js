@@ -22,8 +22,10 @@ const corsOptions = {
 
 console.log(process.env.DB_ID)
   
+const uri = `mongodb+srv://${process.env.DB_ID}:${process.env.DB_PASS}@cluster0.c5ebkxr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
-run().catch(console.dir);
+
+
 
 
 
