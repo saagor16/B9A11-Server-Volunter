@@ -49,7 +49,30 @@ async function run() {
 
       
   
-   
+    app.post('/volunteer', async (req, res) => {
+        const newVolunteer = req.body;
+        console.log(newVolunteer);
+        const result = await volunteerCollection.insertOne(newVolunteer);
+        
+        console.log(result);
+        res.send(result);
+    });
+
+    app.get('/volunteer/:id', async (req, res) => {
+      try {
+          const result = await volunteerCollection.findOne({ _id: new ObjectId(req.params.id) });
+          if (result) {
+              res.send(result);
+          } else {
+              res.status(404).send("Volunteer not found");
+          }
+      } catch (error) {
+          console.error(error);
+          res.status(500).send("Internal Server Error");
+      }
+  });
+
+ 
     
  
 
