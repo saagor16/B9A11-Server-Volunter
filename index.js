@@ -33,7 +33,36 @@ const client = new MongoClient(uri, {
   }
 });
 
+async function run() {
+  try {
+    await client.connect();
+    await client.db("admin").command({ ping: 1 });
+    const volunteerCollection = client.db('volunteerDB').collection('volunteer');
+    const takeVolunteerCollection = client.db('studymate').collection('takeVolunteer');
 
+    app.get('/volunteer', async (req, res) => {
+        const cursor = volunteerCollection.find();
+        const result = await cursor.toArray();
+        res.send(result);
+    });
+
+
+      
+  
+   
+    
+ 
+
+
+
+
+
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    // await client.close();
+  }
+}
 run().catch(console.dir);
 
 
