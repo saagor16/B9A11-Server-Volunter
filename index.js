@@ -72,6 +72,30 @@ async function run() {
       }
   });
 
+    app.post('/takeVolunteer', async(req, res)=>{
+        const takeVolunteer = req.body;
+        const result = await takeVolunteerCollection.insertOne(takeVolunteer);
+        res.send(result)
+      })
+      
+      app.get('/takeVolunteer', async(req, res) =>{
+        const cursor = takeVolunteerCollection.find();
+        const result = await cursor.toArray();
+        res.send(result)
+      })
+    app.get('/volunteer/search', async (req, res) => {
+        const query = req.query.q;
+        try {
+            const cursor = volunteerCollection.find({ title: { $regex: query, $options: 'i' } });
+            const result = await cursor.toArray();
+            res.send(result);
+        } catch (error) {
+            console.error('', error);
+            res.status(500).send('');
+        }
+    });
+
+
  
     
  
