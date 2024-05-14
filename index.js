@@ -95,6 +95,25 @@ async function run() {
         }
     });
 
+    app.delete('/volunteer/:id', async (req, res) => {
+      try {
+          const result = await volunteerCollection.deleteOne({_id: new ObjectId(req.params.id)});
+          if (result.deletedCount === 1) {
+              res.status(200).json({ message: 'Volunteer deleted successfully' });
+          } else {
+              res.status(404).json({ error: 'Volunteer not found' });
+          }
+      } catch (error) {
+          console.error('Error deleting volunteer:', error);
+          res.status(500).json({ error: 'Internal server error' });
+      }
+  });
+  
+
+
+
+
+    
 
  
     
