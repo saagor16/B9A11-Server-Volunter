@@ -34,6 +34,7 @@ const client = new MongoClient(uri, {
 });
 
 
+run().catch(console.dir);
 
 
 
