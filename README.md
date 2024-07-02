@@ -4,15 +4,13 @@ This repository contains the server-side code for the Volunteer Management Websi
 
 ## Description
 
-The server-side of the Volunteer Management Website is built to handle all the backend operations including user authentication, data storage, and API endpoints. The server is powered by **Express.js** and **MongoDB Atlas** to ensure efficient and scalable performance.
+The server-side of the Volunteer Management Website is designed to handle all backend operations including user authentication, data storage, and API endpoints. It aims to provide a scalable and efficient solution for managing volunteers.
 
 ## Features
 
-- User authentication (registration, login, logout)
-- Volunteer data management
-- Secure API endpoints
-- Data storage with MongoDB Atlas
-- Integration with the client-side application
+- **User Authentication**: Registration, login, and logout functionality.
+- **Volunteer Data Management**: Add, update, and delete volunteer information.
+- **Secure API Endpoints**: Ensuring secure data transactions between client and server.
 
 ## Technologies Used
 
@@ -26,8 +24,6 @@ The server-side of the Volunteer Management Website is built to handle all the b
 
 - [Client Repository](https://github.com/saagor16/B9A11-Cline-Volunter)
 
-
-
 ## API Endpoints
 
 - **POST /api/register**: Register a new user
@@ -37,5 +33,3 @@ The server-side of the Volunteer Management Website is built to handle all the b
 - **POST /api/volunteers**: Add a new volunteer
 - **PUT /api/volunteers/:id**: Update volunteer information
 - **DELETE /api/volunteers/:id**: Delete a volunteer
-
-.
