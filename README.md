@@ -35,28 +35,28 @@ This repository contains the server-side code for the Volunteer Management Websi
 
 ### Installation
 
-1. Clone the repository:
+
    ```bash
    git clone https://github.com/saagor16/B9A11-Server-Volunter.git
   ```
-2. Navigate to the project directory:
+ Navigate to the project directory:
     ```bash
     cd B9A10-Server-Side-Art-Cruft
     ```
 
-3. Install dependencies:
+ Install dependencies:
     ```bash
     npm install
     ```
 
-4. Set up environment variables in a `.env` file:
+ Set up environment variables in a `.env` file:
     ```env
     PORT=5000
     MONGODB_URI=your_mongodb_atlas_uri
     JWT_SECRET=your_jwt_secret
     ```
 
-5. Start the server:
+ Start the server:
     ```bash
     npm start
     ```
